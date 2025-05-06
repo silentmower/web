@@ -12,7 +12,9 @@ const equalsButton = document.querySelector('.symbolEquals');
 
 const clearButton = document.querySelector('.clear');
 
-const resetHistoryButton = document.querySelector('.resetHistory');
+const calculatorHistory = document.querySelector('.history');
+
+const historyBtn = document.querySelector('.clearHistory');
 
 
 
@@ -43,81 +45,77 @@ function operate() {
 }
 
 function showResult() {
-    if(previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
 
-    let x = Number(currentNumber.innerHTML);
-    let y = Number(previousNumber.innerHTML);
-    let operator = mathSymbol.innerHTML;
+    if(mathSymbol.innerHTML === '√'){
 
-    switch(operator) {
-        case '+':
-            result = x + y;
-            break;
-        case '-':
-            result = y - x;
-            break;
-        case '*':
-            result = x * y;
-            break;
-        case '/':
-            result = y / x;
-            break;
-        case '%':
-            result = y % x;
-            break;
-        case '√':
-            result = x + y;
-            break;
+        let y = Number(previousNumber.innerHTML);
+        result = Math.sqrt(y);
+
+        addToHistory();
+        historyBtn.classList.add('active');
+        currentNumber.innerHTML = result;
+        previousNumber.innerHTML = '';
+        mathSymbol.innerHTML = '';
+    }
+    else {
+        if (previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
+
+        let x = Number(currentNumber.innerHTML);
+        let y = Number(previousNumber.innerHTML);
+        let operator = mathSymbol.innerHTML;
+
+
+        switch (operator) {
+            case '+':
+                result = x + y;
+                break;
+            case '-':
+                result = y - x;
+                break;
+            case '*':
+                result = x * y;
+                break;
+            case '/':
+                result = y / x;
+                break;
+            case '%':
+                result = y % x;
+                break;
+            case '√':
+                result = Math.sqrt(y);
+                break;
+        }
+
+        addToHistory();
+        historyBtn.classList.add('active');
+        currentNumber.innerHTML = result;
+        previousNumber.innerHTML = '';
+        mathSymbol.innerHTML = '';
+
+
+    }
     }
 
-    currentNumber.innerHTML = result;
-    previousNumber.innerHTML = '';
-    mathSymbol.innerHTML = '';
-
-
-
-
-    }
-
-function clearScreen(){
-
+function addToHistory () {
+    const newHistoryItem = document.createElement('li');
+    newHistoryItem.innerHTML = `${previousNumber.innerHTML} ${mathSymbol.innerHTML} ${currentNumber.innerHTML} = ${result}`
+    newHistoryItem.classList.add('history-item');
+    calculatorHistory.appendChild(newHistoryItem);
 }
 
+function clearScreen(){
+    result = '';
+    currentNumber.innerHTML = '';
+    previousNumber.innerHTML = '';
+    mathSymbol.innerHTML = '';
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function clearHistory () {
+    calculatorHistory.textContent = '';
+    if(calculatorHistory.textContent === '') {
+        historyBtn.classList.remove('active');
+    }
+}
 
 
 operatorButtons.forEach((button) => button.addEventListener('click', operate))
@@ -129,4 +127,6 @@ clearButton.addEventListener('click', clearScreen);
 numbersButtons.forEach((button) => {
     button.addEventListener('click', displayNumbers)
 })
+
+historyBtn.addEventListener('click', clearHistory);
 
