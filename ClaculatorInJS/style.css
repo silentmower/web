@@ -4,61 +4,98 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .calculator{
     border: solid black 1px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    display: flex;
     width: 400px;
-    height: 600px;
-    flex-direction: column;
-    padding: 20px;
+    height: 60vh;
+    min-width: 370px;
+    max-width: 370px;
+    border-radius: 10px;
 }
 
 body {
-    background: linear-gradient(to right bottom, #dddddd, #bbbbbb, #999999, #777777, #555555, #333333, #111111, #000000);
-    height: 100vh;
-    width: max-content;
+    background: linear-gradient(120deg, #bdc3c7, #2c3e50);
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
 }
 
 .mainTitle{
+    margin-top: 20px;
     font-weight: bold;
     display: flex;
     font-size: 50px;
     text-align: center;
 }
 
+.display{
+    width: 100%;
+    height: 20%;
+    max-height: min-content;
+    word-break: break-all;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 5px;
+    border: solid black 1px;
+
+}
 .buttons button {
-    border-radius: 50%;
+    border-radius: 30%;
     width: 75px;
     height: 75px;
     font-weight: bold;
     border: solid black 1px;
     font-size: 30px;
+    transition: all .2s ease-in-out;
 }
 
 .buttons {
     gap: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
-    padding-top: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 80%;
 }
 
 button{
     cursor: pointer;
-    background: #dddddd;
+    background: #ecf0f1;
 
 }
 button:hover{
-    background: #bbbbbb;
+    background:  #d0d7db;
 }
 
 .currentNumber{
     font-weight: bold;
     font-size: 30px;
  }
+
+.symbolEquals {
+    border-radius: 20% !important;
+    width: 100% !important;
+    height: 100% !important;
+    grid-column: -3/-1;
+    grid-row: -1/-2;
+    background-color: #4b79a1;
+}
+
+.currentNumber {
+    font-size: 35px;
+
+}
+
+
+.previousNumber {
+    font-size: 20px;
+}
+
