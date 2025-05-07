@@ -16,6 +16,8 @@ const calculatorHistory = document.querySelector('.history');
 
 const historyBtn = document.querySelector('.clearHistory');
 
+const rootButton = document.querySelector('.symbolRoot');
+
 
 
 let result = '';
@@ -44,20 +46,29 @@ function operate() {
     currentNumber.innerHTML= '';
 }
 
-function showResult() {
+function showRoot() {
+    if (currentNumber.innerHTML !== '') {
+        let value = Number(currentNumber.innerHTML);
+        if (value < 0) {
+            result = 'Błąd';
+        } else {
+            result = Math.sqrt(value);
+        }
 
-    if(mathSymbol.innerHTML === '√'){
+        const newHistoryItem = document.createElement('li');
+        newHistoryItem.innerHTML = `√${value} = ${result}`;
+        newHistoryItem.classList.add('history-item');
+        calculatorHistory.appendChild(newHistoryItem);
 
-        let y = Number(previousNumber.innerHTML);
-        result = Math.sqrt(y);
-
-        addToHistory();
         historyBtn.classList.add('active');
         currentNumber.innerHTML = result;
         previousNumber.innerHTML = '';
         mathSymbol.innerHTML = '';
     }
-    else {
+}
+function showResult() {
+
+
         if (previousNumber.innerHTML === '' || currentNumber.innerHTML === '') return;
 
         let x = Number(currentNumber.innerHTML);
@@ -76,13 +87,14 @@ function showResult() {
                 result = x * y;
                 break;
             case '/':
-                result = y / x;
+                if (x === 0) {
+                    result = 'error';
+                } else {
+                    result = y / x;
+                }
                 break;
             case '%':
                 result = y % x;
-                break;
-            case '√':
-                result = Math.sqrt(y);
                 break;
         }
 
@@ -94,11 +106,14 @@ function showResult() {
 
 
     }
-    }
 
 function addToHistory () {
     const newHistoryItem = document.createElement('li');
-    newHistoryItem.innerHTML = `${previousNumber.innerHTML} ${mathSymbol.innerHTML} ${currentNumber.innerHTML} = ${result}`
+    if (mathSymbol.innerHTML === '√') {
+        newHistoryItem.innerHTML = `√${previousNumber.innerHTML} = ${result}`;
+    } else {
+        newHistoryItem.innerHTML = `${previousNumber.innerHTML} ${mathSymbol.innerHTML} ${currentNumber.innerHTML} = ${result}`;
+    }
     newHistoryItem.classList.add('history-item');
     calculatorHistory.appendChild(newHistoryItem);
 }
@@ -129,4 +144,6 @@ numbersButtons.forEach((button) => {
 })
 
 historyBtn.addEventListener('click', clearHistory);
+
+rootButton.addEventListener('click' , showRoot);
 
