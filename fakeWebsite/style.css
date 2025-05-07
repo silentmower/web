@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
+    color: white;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    padding: 10px  20px;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+body {
+    background: #1c1c1c;
+}
+.headerTitle span:first-child{
+    background: linear-gradient(45deg, #00aaff, #00e5ff, #ff2b88, #a700f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: -20px;
+    font-size: 60px;
+
+}
+
+.headerTitle {
+    font-size: 50px;
+    color: white;
+}
+.search {
+
+}
+.searchInput{
+    height: 35 px;
+    width: 300px;
+    margin-left: 200px;
+    background: #2c2c2c;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.searchIcon{
+    background: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 20%;
+}
+
+.headerButtons button{
+
+}
+
+.headerButtons{
+
+}
+
+.main {
+    display: flex;
+    margin-top: 25vh;
+    justify-content: center;
+}
+
+.mainArticles{
+    width: 80%;
+    height: max-content;
+    display: flex;
+    gap: 40px;
+}
+
+.leftDiv {
+    width: 30%;
+
+}
+
+.rightDiv {
+    width: 70%;
+}
+
+.leftMenu{
+ min-height: 60vh;
+
+}
+
+.filters{
+    border-radius: 20px;
+    border: 1px solid white;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.listOfBrands{
+    list-style-type: none;
+}
+.advert img{
+   border-radius: 20px;
+    height: 200px;
+    width: 100%;
+}
+
+.products{
+    margin-top: 20px;
+
+}
