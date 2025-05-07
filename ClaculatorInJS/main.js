@@ -115,7 +115,7 @@ function addToHistory () {
         newHistoryItem.innerHTML = `${previousNumber.innerHTML} ${mathSymbol.innerHTML} ${currentNumber.innerHTML} = ${result}`;
     }
     newHistoryItem.classList.add('history-item');
-    calculatorHistory.appendChild(newHistoryItem);
+    calculatorHistory.prepend(newHistoryItem);
 }
 
 function clearScreen(){
