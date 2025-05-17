@@ -1,11 +1,45 @@
-*{
+:root {
+    --gradient-angle: 135deg;
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: aliceblue;
+  }
+  
+  body {
+    height: 100vh;
+    background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end));
+  }
+  
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100wv;
 }
 
-body{
-    background: linear-gradient();
-    height: 100vh;
-    
-}
+  .panel{
+    height: 70%;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+
+  }
+
+  .panel input{
+    background: rgba(0,0,0, 0.5);
+    border-radius: 5px;
+  }
+
+  .panel button{
+    background: rgba(0,0,0, 0.5);
+    border-radius: 5px;
+  }
