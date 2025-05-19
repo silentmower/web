@@ -14,6 +14,7 @@
   body {
     height: 100vh;
     background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end));
+    letter-spacing: 2px;
   }
   
 main{
@@ -31,15 +32,43 @@ main{
     margin: 0 auto;
     border-radius: 10px;
     padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid white 0.5px;
 
+  }
+
+  h1{
+    font-size: 40px;
+    margin-bottom: 50px;
   }
 
   .panel input{
-    background: rgba(0,0,0, 0.5);
-    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid  white;
+    height: 5%;
+    width: 60%;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.0);
   }
 
   .panel button{
-    background: rgba(0,0,0, 0.5);
+    background: rgba(0,0,0, 0);
     border-radius: 5px;
+    height: 8%;
+    width: 20%;
+    font-size: 15px;
+    margin-top: 20px;
+    border: solid white 0.5px;
+  }
+
+  .panel button:hover{
+    background: rgba(0,0,0, 0.25);
+  }
+
+  .panel input:hover{
+    background: rgba(0,0,0, 0.25);
   }
