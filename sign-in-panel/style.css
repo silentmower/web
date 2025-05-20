@@ -53,6 +53,7 @@ main{
     font-size: 15px;
     margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.0);
+    border-radius: 1px;
   }
 
   .panel button{
@@ -72,3 +73,6 @@ main{
   .panel input:hover{
     background: rgba(0,0,0, 0.25);
   }
+
+
+  
