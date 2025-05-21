@@ -42,7 +42,7 @@ main{
 
   h1{
     font-size: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .panel input{
@@ -51,7 +51,7 @@ main{
     height: 5%;
     width: 60%;
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.0);
     border-radius: 1px;
   }
@@ -66,6 +66,11 @@ main{
     border: solid white 0.5px;
   }
 
+  .panel span{
+    margin-top: -20px;
+    font-size: 15px;
+  }
+
   .panel button:hover{
     background: rgba(0,0,0, 0.25);
   }
@@ -75,4 +80,3 @@ main{
   }
 
 
-  
