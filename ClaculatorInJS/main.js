@@ -19,7 +19,6 @@ const historyBtn = document.querySelector('.clearHistory');
 const rootButton = document.querySelector('.symbolRoot');
 
 
-
 let result = '';
 
 
