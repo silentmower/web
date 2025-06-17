@@ -3,8 +3,21 @@
     src: url('fonts/ds-digit.ttf') format('truetype');
   }
 
+  :root {
+    --gradient-angle: 135deg;
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+  }
 
 body{
+    background: linear-gradient(var(--gradient-angle), var(--gradient-start), var(--gradient-end));
    
 }
 
@@ -15,7 +28,6 @@ header{
     height: 20vh;
     display: flex;
     font-size: 32px;
-    border-bottom: 1px black solid;
 
 }
 
