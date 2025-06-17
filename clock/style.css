@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('fonts/ds-digit.ttf') format('truetype');
+  }
+
+
+body{
+   
+}
+
+header{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    display: flex;
+    font-size: 32px;
+    border-bottom: 1px black solid;
+
+}
+
+#clock{
+    align-items: center;
+    justify-content: center;
+    font-family: 'Digital', monospace;
+    font-size: 64px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+}
